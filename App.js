@@ -3,7 +3,7 @@ import { useSpotifyAuth } from "./utils";
 import { Themes } from "./assets/Themes";
 import SpotifyAuthButton from "./components/SpotifyAuthButton";
 import SongList from "./components/SongList";
-// import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
+import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 import 'react-native-gesture-handler';
 
 export default function App() {
