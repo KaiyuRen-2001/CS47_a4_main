@@ -1,7 +1,8 @@
 import { Text, StyleSheet, Image, View, Dimensions } from "react-native";
 import { Themes } from "../assets/Themes";
 import { millisToMinutesAndSeconds } from "../utils";
-
+import { Ionicons } from "@expo/vector-icons";
+import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 const windowWidth = Dimensions.get("window").width;
 
 export default function Song({ id, image, title, album, artist, duration }) {
@@ -10,8 +11,13 @@ export default function Song({ id, image, title, album, artist, duration }) {
       <View style={styles.indexView}>
         <Text style={styles.text}>{id}</Text>
       </View>
+
+      <Pressable>
+        <Ionicons name="play-circle-outline" size={36} color="green" />
+      </Pressable>
+
       <View style={styles.imageView}>
-        <Image style={styles.image} source={{ uri: image}}></Image>
+        <Image style={styles.image} source={{ uri: image }}></Image>
       </View>
       <View style={styles.titleView}>
         <Text numberOfLines={1} style={styles.text}>
@@ -82,8 +88,8 @@ const styles = StyleSheet.create({
   },
   image: {
     resizeMode: "contain",
-   
-    width: "100%" ,
+
+    width: "100%",
     height: "100%",
   },
 });
