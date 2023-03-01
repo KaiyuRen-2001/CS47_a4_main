@@ -24,6 +24,7 @@ const renderItem = ({ item, index }) => (
     artist={item.songArtists[0].name}
     duration={item.duration}
     external={item.externalUrl}
+    preview={item.previewUrl}
   />
 );
 

@@ -7,11 +7,33 @@ import { useNavigation } from "@react-navigation/native";
 
 const windowWidth = Dimensions.get("window").width;
 
-export default function Song({ id, image, title, album, artist, duration, external }) {
+export default function Song({
+  id,
+  image,
+  title,
+  album,
+  artist,
+  duration,
+  external,
+  preview,
+}) {
   const navigation = useNavigation();
 
   return (
     <View style={styles.windowView}>
+      <Pressable
+        style={styles.playButtonBox}
+        onPress={() =>
+          navigation.navigate("DetailsScreen", { url: preview })
+        }
+      >
+        <Ionicons
+          name="play-circle"
+          size={windowWidth * 0.05}
+          color={Themes.colors.spotify}
+        />
+      </Pressable>
+
       <View style={styles.indexView}>
         <Text style={styles.text}>{id}</Text>
       </View>
@@ -101,5 +123,11 @@ const styles = StyleSheet.create({
 
     width: "100%",
     height: "100%",
+  },
+  playButtonBox: {
+    width: windowWidth * 0.075,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
   },
 });
