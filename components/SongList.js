@@ -23,6 +23,7 @@ const renderItem = ({ item, index }) => (
     album={item.albumName}
     artist={item.songArtists[0].name}
     duration={item.duration}
+    external={item.externalUrl}
   />
 );
 

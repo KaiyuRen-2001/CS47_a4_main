@@ -3,16 +3,26 @@ import { Themes } from "../assets/Themes";
 import { millisToMinutesAndSeconds } from "../utils";
 import { Ionicons } from "@expo/vector-icons";
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
+import { useNavigation } from "@react-navigation/native";
+
 const windowWidth = Dimensions.get("window").width;
 
-export default function Song({ id, image, title, album, artist, duration }) {
+export default function Song({ id, image, title, album, artist, duration, external }) {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.windowView}>
       <View style={styles.indexView}>
         <Text style={styles.text}>{id}</Text>
       </View>
 
-      <Pressable>
+      <Pressable
+        onPress={() =>
+          navigation.navigate("PreviewScreen", {
+            url: external,
+          })
+        }
+      >
         <Ionicons name="play-circle-outline" size={36} color="green" />
       </Pressable>
 
