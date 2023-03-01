@@ -8,7 +8,7 @@ const PreviewScreen = ({navigation, route}) => {
     return (
         <WebView
         source={{
-          uri: route.params.url,
+          uri: route.params.url ?? '',
         }}
         
       />
