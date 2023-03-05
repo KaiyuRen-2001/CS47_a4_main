@@ -1,7 +1,4 @@
-# cs47-a3-starter-w23
-a3 starter code
+# cs47-a4-23
 
-Starting the app
-1. git clone https://github.com/acui51/cs47-a3-starter-w23.git
-2. `yarn install`
-3. `npx expo start`
+Spotify implementation with three screens
+
